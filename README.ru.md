@@ -1,6 +1,6 @@
 # Виджет цен DeepSeek
 
-[繁體中文](README.md) · [English](README.en.md) · [简体中文](README.zh-CN.md) · [日本語](README.ja.md) · **Русский**
+[繁體中文（香港）](README.zh-HK.md) · [繁體中文（台灣）](README.zh-TW.md) · [简体中文](README.zh-CN.md) · [English](README.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Русский](README.ru.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Italiano](README.it.md) · [Português (Brasil)](README.pt-BR.md)
 
 Плавающий виджет для рабочего стола Windows: показывает пиковые/внепиковые периоды API DeepSeek и актуальные цены. Поддерживает несколько валют и языков.
 

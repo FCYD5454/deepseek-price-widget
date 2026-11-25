@@ -1,6 +1,6 @@
 # DeepSeek 価格ウィジェット
 
-[繁體中文](README.md) · [English](README.en.md) · [简体中文](README.zh-CN.md) · **日本語** · [Русский](README.ru.md)
+[繁體中文（香港）](README.zh-HK.md) · [繁體中文（台灣）](README.zh-TW.md) · [简体中文](README.zh-CN.md) · [English](README.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Русский](README.ru.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Italiano](README.it.md) · [Português (Brasil)](README.pt-BR.md)
 
 DeepSeek API のピーク／オフピーク時間帯と最新価格を表示する Windows デスクトップ用のフローティングウィジェットです。多通貨・多言語に対応します。
 
