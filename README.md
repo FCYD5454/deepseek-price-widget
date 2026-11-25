@@ -70,3 +70,7 @@ DeepSeekPriceWidget.exe --fxtest     # FX endpoint
 ```
 
 Results are written to `logs/`.
+
+## License
+
+[MIT](LICENSE)
