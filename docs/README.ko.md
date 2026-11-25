@@ -1,6 +1,6 @@
 # DeepSeek 가격 위젯
 
-[繁體中文（香港）](README.zh-HK.md) · [繁體中文（台灣）](README.zh-TW.md) · [简体中文](README.zh-CN.md) · [English](README.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Русский](README.ru.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Italiano](README.it.md) · [Português (Brasil)](README.pt-BR.md)
+[繁體中文](README.zh-Hant.md) · [简体中文](README.zh-CN.md) · [English](../README.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Русский](README.ru.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Italiano](README.it.md) · [Português (Brasil)](README.pt-BR.md)
 
 DeepSeek API의 혼잡/비혼잡 시간대와 실시간 가격을 보여 주는 Windows 데스크톱 플로팅 위젯입니다. 다중 통화와 다국어를 지원합니다.
 
@@ -31,7 +31,7 @@ powershell -ExecutionPolicy Bypass -File src\build-widget.ps1
 
 ## 사용법
 
-`DeepSeekPriceWidget.exe` 또는 `啟動DeepSeek價格小工具.bat`을 더블 클릭하세요.
+`DeepSeekPriceWidget.exe` 또는 `Start-DeepSeek-Price-Widget.bat`을 더블 클릭하세요.
 
 오른쪽 클릭 메뉴에서 모서리, 모양, 언어, 통화, 비용 계산, 가격 기록, 단축키를 설정할 수 있습니다.
 단축키: `Ctrl+Alt+D`(표시/숨기기), `Ctrl+E`(계산), `Ctrl+R`(가격 새로고침), `Ctrl+H`(트레이로), `Ctrl+Shift+Q`(종료).

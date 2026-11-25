@@ -1,6 +1,6 @@
 # Widget prezzi DeepSeek
 
-[繁體中文（香港）](README.zh-HK.md) · [繁體中文（台灣）](README.zh-TW.md) · [简体中文](README.zh-CN.md) · [English](README.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Русский](README.ru.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Italiano](README.it.md) · [Português (Brasil)](README.pt-BR.md)
+[繁體中文](README.zh-Hant.md) · [简体中文](README.zh-CN.md) · [English](../README.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Русский](README.ru.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Italiano](README.it.md) · [Português (Brasil)](README.pt-BR.md)
 
 Widget flottante per Windows che mostra i periodi di punta/non di punta dell’API DeepSeek e i prezzi in tempo reale, con supporto multi-valuta e multi-lingua.
 
@@ -31,7 +31,7 @@ Genera `DeepSeekPriceWidget.exe` nella radice del progetto. `assets\app.ico` è 
 
 ## Uso
 
-Fai doppio clic su `DeepSeekPriceWidget.exe` o `啟動DeepSeek價格小工具.bat`.
+Fai doppio clic su `DeepSeekPriceWidget.exe` o `Start-DeepSeek-Price-Widget.bat`.
 
 Clic destro: angolo, aspetto, lingua, valuta, stima costi, cronologia prezzi, scorciatoie.
 Scorciatoie: `Ctrl+Alt+D` (mostra/nascondi), `Ctrl+E` (stima), `Ctrl+R` (aggiorna prezzi), `Ctrl+H` (area di notifica), `Ctrl+Shift+Q` (esci).

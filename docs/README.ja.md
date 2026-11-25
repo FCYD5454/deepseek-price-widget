@@ -1,6 +1,6 @@
 # DeepSeek 価格ウィジェット
 
-[繁體中文（香港）](README.zh-HK.md) · [繁體中文（台灣）](README.zh-TW.md) · [简体中文](README.zh-CN.md) · [English](README.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Русский](README.ru.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Italiano](README.it.md) · [Português (Brasil)](README.pt-BR.md)
+[繁體中文](README.zh-Hant.md) · [简体中文](README.zh-CN.md) · [English](../README.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Русский](README.ru.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Italiano](README.it.md) · [Português (Brasil)](README.pt-BR.md)
 
 DeepSeek API のピーク／オフピーク時間帯と最新価格を表示する Windows デスクトップ用のフローティングウィジェットです。多通貨・多言語に対応します。
 
@@ -31,7 +31,7 @@ powershell -ExecutionPolicy Bypass -File src\build-widget.ps1
 
 ## 使い方
 
-`DeepSeekPriceWidget.exe` または `啟動DeepSeek價格小工具.bat` をダブルクリックします。
+`DeepSeekPriceWidget.exe` または `Start-DeepSeek-Price-Widget.bat` をダブルクリックします。
 
 右クリックでコーナー、外観、言語、通貨、コスト計算、価格履歴、ショートカットを操作できます。
 ショートカット：`Ctrl+Alt+D`（表示／非表示）、`Ctrl+E`（計算）、`Ctrl+R`（価格更新）、`Ctrl+H`（トレイへ）、`Ctrl+Shift+Q`（終了）。

@@ -1,6 +1,6 @@
 # DeepSeek Price Widget
 
-[繁體中文（香港）](README.zh-HK.md) · [繁體中文（台灣）](README.zh-TW.md) · [简体中文](README.zh-CN.md) · [English](README.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Русский](README.ru.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Italiano](README.it.md) · [Português (Brasil)](README.pt-BR.md)
+[繁體中文](docs/README.zh-Hant.md) · [简体中文](docs/README.zh-CN.md) · [English](README.md) · [日本語](docs/README.ja.md) · [한국어](docs/README.ko.md) · [Русский](docs/README.ru.md) · [Français](docs/README.fr.md) · [Deutsch](docs/README.de.md) · [Español](docs/README.es.md) · [Italiano](docs/README.it.md) · [Português (Brasil)](docs/README.pt-BR.md)
 
 A floating Windows desktop widget showing DeepSeek API peak/off-peak periods and live prices, with multi-currency and multi-language support.
 
@@ -31,7 +31,7 @@ This produces `DeepSeekPriceWidget.exe` in the project root. `assets\app.ico` is
 
 ## Usage
 
-Double-click `DeepSeekPriceWidget.exe` or `啟動DeepSeek價格小工具.bat`.
+Double-click `DeepSeekPriceWidget.exe` or `Start-DeepSeek-Price-Widget.bat`.
 
 Right-click for corners, appearance, language, currency, estimator, price history and shortcut help.
 Shortcuts: `Ctrl+Alt+D` (show/hide), `Ctrl+E` (estimator), `Ctrl+R` (refresh prices), `Ctrl+H` (hide to tray), `Ctrl+Shift+Q` (exit).

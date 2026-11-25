@@ -1,6 +1,6 @@
 # DeepSeek-Preis-Widget
 
-[繁體中文（香港）](README.zh-HK.md) · [繁體中文（台灣）](README.zh-TW.md) · [简体中文](README.zh-CN.md) · [English](README.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Русский](README.ru.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Italiano](README.it.md) · [Português (Brasil)](README.pt-BR.md)
+[繁體中文](README.zh-Hant.md) · [简体中文](README.zh-CN.md) · [English](../README.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Русский](README.ru.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Italiano](README.it.md) · [Português (Brasil)](README.pt-BR.md)
 
 Schwebendes Windows-Desktop-Widget, das Spitzen-/Nebenzeiten der DeepSeek-API und aktuelle Preise anzeigt – mit mehreren Währungen und Sprachen.
 
@@ -31,7 +31,7 @@ Erzeugt `DeepSeekPriceWidget.exe` im Projektstamm. `assets\app.ico` wird vom Skr
 
 ## Nutzung
 
-Doppelklick auf `DeepSeekPriceWidget.exe` oder `啟動DeepSeek價格小工具.bat`.
+Doppelklick auf `DeepSeekPriceWidget.exe` oder `Start-DeepSeek-Price-Widget.bat`.
 
 Rechtsklick: Ecke, Darstellung, Sprache, Währung, Kostenschätzung, Preisverlauf, Tastenkürzel.
 Kürzel: `Ctrl+Alt+D` (anzeigen/ausblenden), `Ctrl+E` (Schätzung), `Ctrl+R` (Preise aktualisieren), `Ctrl+H` (Infobereich), `Ctrl+Shift+Q` (beenden).

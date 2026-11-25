@@ -1,6 +1,6 @@
 # DeepSeek 价格小工具
 
-[繁體中文（香港）](README.zh-HK.md) · [繁體中文（台灣）](README.zh-TW.md) · [简体中文](README.zh-CN.md) · [English](README.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Русский](README.ru.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Italiano](README.it.md) · [Português (Brasil)](README.pt-BR.md)
+[繁體中文](README.zh-Hant.md) · [简体中文](README.zh-CN.md) · [English](../README.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Русский](README.ru.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Italiano](README.it.md) · [Português (Brasil)](README.pt-BR.md)
 
 Windows 桌面悬浮小工具，显示 DeepSeek API 的高峰/空闲时段与实时价格，支持多货币与多语言。
 
@@ -31,7 +31,7 @@ powershell -ExecutionPolicy Bypass -File src\build-widget.ps1
 
 ## 使用
 
-双击 `DeepSeekPriceWidget.exe` 或 `啟動DeepSeek價格小工具.bat`。
+双击 `DeepSeekPriceWidget.exe` 或 `Start-DeepSeek-Price-Widget.bat`。
 
 右键菜单可切换窗口角落、外观、语言、货币，打开成本估算/价格历史/快捷键说明。
 默认快捷键：`Ctrl+Alt+D`（显示/隐藏）、`Ctrl+E`（估算）、`Ctrl+R`（刷新价格）、`Ctrl+H`（收到系统托盘）、`Ctrl+Shift+Q`（退出）。

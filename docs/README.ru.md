@@ -1,6 +1,6 @@
 # Виджет цен DeepSeek
 
-[繁體中文（香港）](README.zh-HK.md) · [繁體中文（台灣）](README.zh-TW.md) · [简体中文](README.zh-CN.md) · [English](README.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Русский](README.ru.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Italiano](README.it.md) · [Português (Brasil)](README.pt-BR.md)
+[繁體中文](README.zh-Hant.md) · [简体中文](README.zh-CN.md) · [English](../README.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Русский](README.ru.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Italiano](README.it.md) · [Português (Brasil)](README.pt-BR.md)
 
 Плавающий виджет для рабочего стола Windows: показывает пиковые/внепиковые периоды API DeepSeek и актуальные цены. Поддерживает несколько валют и языков.
 
@@ -31,7 +31,7 @@ powershell -ExecutionPolicy Bypass -File src\build-widget.ps1
 
 ## Использование
 
-Запустите `DeepSeekPriceWidget.exe` или `啟動DeepSeek價格小工具.bat`.
+Запустите `DeepSeekPriceWidget.exe` или `Start-DeepSeek-Price-Widget.bat`.
 
 Правый клик: угол экрана, оформление, язык, валюта, калькулятор, история цен, горячие клавиши.
 Клавиши: `Ctrl+Alt+D` (показать/скрыть), `Ctrl+E` (калькулятор), `Ctrl+R` (обновить цены), `Ctrl+H` (в трей), `Ctrl+Shift+Q` (выход).
