@@ -6,6 +6,10 @@ A floating Windows desktop widget showing DeepSeek API peak/off-peak periods and
 
 > Unofficial tool. Always refer to the official DeepSeek pricing page for final prices.
 
+<p align="center">
+  <img src="docs/screenshots/widget-overview.png" alt="DeepSeek Price Widget — compact and expanded views" width="760">
+</p>
+
 ## Features
 
 - Peak/off-peak detection based on Beijing time and Chinese public holidays, with countdown
