@@ -1,0 +1,49 @@
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="成本估算"
+        Width="300" SizeToContent="Height"
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent"
+        Topmost="True" ShowInTaskbar="False" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        UseLayoutRounding="True"
+        TextOptions.TextFormattingMode="Display"
+        AutomationProperties.Name="成本估算"
+        FontFamily="Microsoft JhengHei UI, Segoe UI">
+  <Border CornerRadius="14" Background="{DynamicResource BgBrush}" BorderBrush="{DynamicResource BorderBrushCard}" BorderThickness="1" Padding="14">
+    <StackPanel>
+      <Grid>
+        <TextBlock x:Name="LblEstHeading" Text="成本估算" Foreground="{DynamicResource TextPrimary}" FontSize="14" FontWeight="Bold"/>
+        <TextBlock x:Name="EstPeriodText" Text="" Foreground="{DynamicResource TextSecondary}" FontSize="10" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+      </Grid>
+      <TextBlock x:Name="LblEstModel" Text="模型" Foreground="{DynamicResource TextMuted}" FontSize="10" Margin="0,10,0,3"/>
+      <ComboBox x:Name="EstModel" Height="24" FontSize="12" AutomationProperties.Name="模型">
+        <ComboBoxItem Content="deepseek-flash" IsSelected="True"/>
+        <ComboBoxItem Content="deepseek-v4-pro"/>
+      </ComboBox>
+      <Grid Margin="0,8,0,0">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="8"/>
+          <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+          <TextBlock x:Name="LblEstInput" Text="輸入 tokens" Foreground="{DynamicResource TextMuted}" FontSize="10" Margin="0,0,0,3"/>
+          <TextBox x:Name="EstInput" Text="100000" Height="24" FontSize="12" VerticalContentAlignment="Center" AutomationProperties.Name="輸入 tokens" Background="{DynamicResource InputBg}" Foreground="{DynamicResource TextPrimary}" BorderBrush="{DynamicResource BorderBrushCard}" CaretBrush="{DynamicResource TextPrimary}"/>
+        </StackPanel>
+        <StackPanel Grid.Column="2">
+          <TextBlock x:Name="LblEstOutput" Text="輸出 tokens" Foreground="{DynamicResource TextMuted}" FontSize="10" Margin="0,0,0,3"/>
+          <TextBox x:Name="EstOutput" Text="20000" Height="24" FontSize="12" VerticalContentAlignment="Center" AutomationProperties.Name="輸出 tokens" Background="{DynamicResource InputBg}" Foreground="{DynamicResource TextPrimary}" BorderBrush="{DynamicResource BorderBrushCard}" CaretBrush="{DynamicResource TextPrimary}"/>
+        </StackPanel>
+      </Grid>
+      <TextBlock x:Name="LblEstHit" Text="快取命中率（%，0–100）" Foreground="{DynamicResource TextMuted}" FontSize="10" Margin="0,8,0,3"/>
+      <TextBox x:Name="EstHit" Text="80" Height="24" FontSize="12" VerticalContentAlignment="Center" AutomationProperties.Name="快取命中率" Background="{DynamicResource InputBg}" Foreground="{DynamicResource TextPrimary}" BorderBrush="{DynamicResource BorderBrushCard}" CaretBrush="{DynamicResource TextPrimary}"/>
+      <TextBlock x:Name="EstResult" Text="—" Foreground="{DynamicResource TextBody}" FontSize="20" FontWeight="Bold" Margin="0,12,0,0"/>
+      <TextBlock x:Name="EstDetail" Text="" Foreground="{DynamicResource TextSecondary}" FontSize="10" TextWrapping="Wrap" Margin="0,4,0,0"/>
+      <TextBlock x:Name="LblEstNote" Text="以目前時段價格計算；高峰價為空閒價 2 倍。" Foreground="{DynamicResource TextFaint}" FontSize="9" TextWrapping="Wrap" Margin="0,6,0,0"/>
+      <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,12,0,0">
+        <Button x:Name="EstCopy" Content="複製結果" Height="26" Width="96" Margin="0,0,8,0" AutomationProperties.Name="複製估算結果" Background="{DynamicResource ButtonBg}" Foreground="{DynamicResource TextPrimary}" BorderBrush="{DynamicResource BorderBrushCard}"/>
+        <Button x:Name="EstClose" Content="關閉" Height="26" Width="72" AutomationProperties.Name="關閉成本估算" Background="{DynamicResource ButtonBg}" Foreground="{DynamicResource TextPrimary}" BorderBrush="{DynamicResource BorderBrushCard}"/>
+      </StackPanel>
+    </StackPanel>
+  </Border>
+</Window>

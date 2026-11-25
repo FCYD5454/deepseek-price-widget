@@ -1,0 +1,150 @@
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Name="MainWindow"
+        Title="DeepSeek API 價格"
+        Width="250" Height="140"
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent"
+        Topmost="True" ShowInTaskbar="False" ResizeMode="NoResize"
+        UseLayoutRounding="True"
+        TextOptions.TextFormattingMode="Display"
+        AutomationProperties.Name="DeepSeek 價格小工具"
+        FontFamily="Microsoft JhengHei UI, Segoe UI">
+  <Border x:Name="RootBorder" CornerRadius="14" Background="{DynamicResource BgBrush}" BorderBrush="{DynamicResource BorderBrushCard}" BorderThickness="1" Padding="12,10">
+    <Border.ContextMenu>
+      <ContextMenu>
+        <MenuItem Header="視窗角落">
+          <MenuItem Header="右下角" IsCheckable="True" IsChecked="True"/>
+          <MenuItem Header="左下角" IsCheckable="True"/>
+          <MenuItem Header="右上角" IsCheckable="True"/>
+          <MenuItem Header="左上角" IsCheckable="True"/>
+        </MenuItem>
+        <MenuItem Header="外觀">
+          <MenuItem Header="跟隨系統" IsCheckable="True"/>
+          <MenuItem Header="淺色" IsCheckable="True"/>
+          <MenuItem Header="深色" IsCheckable="True"/>
+        </MenuItem>
+        <MenuItem Header="語言">
+          <MenuItem Header="跟隨系統" IsCheckable="True"/>
+        </MenuItem>
+        <MenuItem Header="貨幣">
+          <MenuItem Header="人民幣（CNY）" IsCheckable="True" IsChecked="True"/>
+        </MenuItem>
+        <MenuItem Header="今天當作假日（空閒價）" IsCheckable="True"/>
+        <MenuItem Header="鎖定位置" IsCheckable="True"/>
+        <Separator/>
+        <MenuItem Header="成本估算…"/>
+        <MenuItem Header="重新整理價格"/>
+        <MenuItem Header="重新載入假日表"/>
+        <MenuItem Header="開啟 DeepSeek 定價頁"/>
+        <MenuItem Header="價格歷史…"/>
+        <MenuItem Header="快捷鍵說明…"/>
+        <Separator/>
+        <MenuItem Header="退出"/>
+      </ContextMenu>
+    </Border.ContextMenu>
+    <StackPanel>
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
+          <Border x:Name="Badge" CornerRadius="8" Padding="9,3" Background="#2ECC71" VerticalAlignment="Center">
+            <TextBlock x:Name="BadgeText" Text="空閒" Foreground="#0B1117" FontSize="12" FontWeight="Bold"/>
+          </Border>
+          <TextBlock x:Name="StaleText" Text="●" Foreground="#FF9F43" FontSize="11" Margin="5,0,0,0" VerticalAlignment="Center" Visibility="Collapsed" ToolTip="價格資料可能已過期，右鍵可重新整理"/>
+          <TextBlock x:Name="LockText" Text="鎖定" Foreground="#FFC042" FontSize="9" Margin="5,0,0,0" VerticalAlignment="Center" Visibility="Collapsed" ToolTip="位置已鎖定（右鍵可解除）"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1" HorizontalAlignment="Right">
+          <TextBlock x:Name="ClockText" Text="--:--:--" Foreground="{DynamicResource TextPrimary}" FontSize="22" FontWeight="SemiBold" HorizontalAlignment="Right"/>
+          <TextBlock x:Name="DateText" Text="" Foreground="{DynamicResource TextSecondary}" FontSize="11" HorizontalAlignment="Right"/>
+        </StackPanel>
+      </Grid>
+      <TextBlock x:Name="SummaryText" Text="" Foreground="{DynamicResource TextBody}" FontSize="11" Margin="0,7,0,0" TextWrapping="Wrap"/>
+      <TextBlock x:Name="CountdownText" Text="" Foreground="{DynamicResource TextSecondary}" FontSize="11" Margin="0,3,0,0"/>
+      <StackPanel x:Name="DetailPanel" Visibility="Collapsed" Margin="0,9,0,0">
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="52"/>
+            <ColumnDefinition Width="52"/>
+          </Grid.ColumnDefinitions>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+          </Grid.RowDefinitions>
+          <TextBlock x:Name="UnitText" Grid.Row="0" Grid.Column="0" Text="元 / M tokens" Foreground="{DynamicResource TextMuted}" FontSize="10" VerticalAlignment="Center"/>
+          <TextBlock x:Name="HeadOff" Grid.Row="0" Grid.Column="1" Text="空閒" Foreground="{DynamicResource TextMuted}" FontSize="10" HorizontalAlignment="Center"/>
+          <TextBlock x:Name="HeadPeak" Grid.Row="0" Grid.Column="2" Text="高峰" Foreground="{DynamicResource TextMuted}" FontSize="10" HorizontalAlignment="Center"/>
+          <TextBlock Grid.Row="1" Grid.ColumnSpan="3" Text="deepseek-flash" Foreground="{DynamicResource NameFlash}" FontSize="11" FontWeight="Bold" Margin="0,7,0,2"/>
+          <TextBlock x:Name="LblFlashHit" Grid.Row="2" Grid.Column="0" Text="輸入（快取命中）" Foreground="{DynamicResource TextBody}" FontSize="11" VerticalAlignment="Center"/>
+          <Border x:Name="FlashHitOff" Grid.Row="2" Grid.Column="1" CornerRadius="4" Margin="3,1">
+            <TextBlock x:Name="FlashHitOffV" Text="0.02" Foreground="{DynamicResource CellText}" FontSize="11" HorizontalAlignment="Center"/>
+          </Border>
+          <Border x:Name="FlashHitPeak" Grid.Row="2" Grid.Column="2" CornerRadius="4" Margin="3,1">
+            <TextBlock x:Name="FlashHitPeakV" Text="0.04" Foreground="{DynamicResource CellText}" FontSize="11" HorizontalAlignment="Center"/>
+          </Border>
+          <TextBlock x:Name="LblFlashMiss" Grid.Row="3" Grid.Column="0" Text="輸入（快取未命中）" Foreground="{DynamicResource TextBody}" FontSize="11" VerticalAlignment="Center"/>
+          <Border x:Name="FlashMissOff" Grid.Row="3" Grid.Column="1" CornerRadius="4" Margin="3,1">
+            <TextBlock x:Name="FlashMissOffV" Text="1" Foreground="{DynamicResource CellText}" FontSize="11" HorizontalAlignment="Center"/>
+          </Border>
+          <Border x:Name="FlashMissPeak" Grid.Row="3" Grid.Column="2" CornerRadius="4" Margin="3,1">
+            <TextBlock x:Name="FlashMissPeakV" Text="2" Foreground="{DynamicResource CellText}" FontSize="11" HorizontalAlignment="Center"/>
+          </Border>
+          <TextBlock x:Name="LblFlashOut" Grid.Row="4" Grid.Column="0" Text="輸出" Foreground="{DynamicResource TextBody}" FontSize="11" VerticalAlignment="Center"/>
+          <Border x:Name="FlashOutOff" Grid.Row="4" Grid.Column="1" CornerRadius="4" Margin="3,1">
+            <TextBlock x:Name="FlashOutOffV" Text="4" Foreground="{DynamicResource CellText}" FontSize="11" HorizontalAlignment="Center"/>
+          </Border>
+          <Border x:Name="FlashOutPeak" Grid.Row="4" Grid.Column="2" CornerRadius="4" Margin="3,1">
+            <TextBlock x:Name="FlashOutPeakV" Text="8" Foreground="{DynamicResource CellText}" FontSize="11" HorizontalAlignment="Center"/>
+          </Border>
+          <TextBlock Grid.Row="5" Grid.ColumnSpan="3" Text="deepseek-v4-pro" Foreground="{DynamicResource NamePro}" FontSize="11" FontWeight="Bold" Margin="0,7,0,2"/>
+          <TextBlock x:Name="LblProHit" Grid.Row="6" Grid.Column="0" Text="輸入（快取命中）" Foreground="{DynamicResource TextBody}" FontSize="11" VerticalAlignment="Center"/>
+          <Border x:Name="ProHitOff" Grid.Row="6" Grid.Column="1" CornerRadius="4" Margin="3,1">
+            <TextBlock x:Name="ProHitOffV" Text="0.15" Foreground="{DynamicResource CellText}" FontSize="11" HorizontalAlignment="Center"/>
+          </Border>
+          <Border x:Name="ProHitPeak" Grid.Row="6" Grid.Column="2" CornerRadius="4" Margin="3,1">
+            <TextBlock x:Name="ProHitPeakV" Text="0.30" Foreground="{DynamicResource CellText}" FontSize="11" HorizontalAlignment="Center"/>
+          </Border>
+          <TextBlock x:Name="LblProMiss" Grid.Row="7" Grid.Column="0" Text="輸入（快取未命中）" Foreground="{DynamicResource TextBody}" FontSize="11" VerticalAlignment="Center"/>
+          <Border x:Name="ProMissOff" Grid.Row="7" Grid.Column="1" CornerRadius="4" Margin="3,1">
+            <TextBlock x:Name="ProMissOffV" Text="4.5" Foreground="{DynamicResource CellText}" FontSize="11" HorizontalAlignment="Center"/>
+          </Border>
+          <Border x:Name="ProMissPeak" Grid.Row="7" Grid.Column="2" CornerRadius="4" Margin="3,1">
+            <TextBlock x:Name="ProMissPeakV" Text="9.0" Foreground="{DynamicResource CellText}" FontSize="11" HorizontalAlignment="Center"/>
+          </Border>
+          <TextBlock x:Name="LblProOut" Grid.Row="8" Grid.Column="0" Text="輸出" Foreground="{DynamicResource TextBody}" FontSize="11" VerticalAlignment="Center"/>
+          <Border x:Name="ProOutOff" Grid.Row="8" Grid.Column="1" CornerRadius="4" Margin="3,1">
+            <TextBlock x:Name="ProOutOffV" Text="13.5" Foreground="{DynamicResource CellText}" FontSize="11" HorizontalAlignment="Center"/>
+          </Border>
+          <Border x:Name="ProOutPeak" Grid.Row="8" Grid.Column="2" CornerRadius="4" Margin="3,1">
+            <TextBlock x:Name="ProOutPeakV" Text="27" Foreground="{DynamicResource CellText}" FontSize="11" HorizontalAlignment="Center"/>
+          </Border>
+        </Grid>
+        <Border Height="1" Background="{DynamicResource DividerBrush}" Margin="0,9,0,0"/>
+        <TextBlock x:Name="LblFees" Text="其他費用" Foreground="{DynamicResource TextMuted}" FontSize="9" Margin="0,7,0,3"/>
+        <TextBlock x:Name="FixedSearchText" Text="Search / Fetch API：5 元 / 1k 次成功請求" Foreground="{DynamicResource TextSecondary}" FontSize="10" Margin="0,0,0,1"/>
+        <TextBlock x:Name="FixedOcrText" Text="文件解析 / OCR：1.5 元 / 1k 頁" Foreground="{DynamicResource TextSecondary}" FontSize="10"/>
+        <Border Height="1" Background="{DynamicResource DividerBrush}" Margin="0,8,0,0"/>
+        <TextBlock x:Name="LblStatus" Text="資料狀態" Foreground="{DynamicResource TextMuted}" FontSize="9" Margin="0,7,0,3"/>
+        <TextBlock x:Name="PriceNoteText" Text="" Foreground="{DynamicResource TextFaint}" FontSize="9" TextWrapping="Wrap" Margin="0,0,0,1"/>
+        <TextBlock x:Name="StatusText" Text="" Foreground="{DynamicResource TextFaint}" FontSize="9" TextWrapping="Wrap" Margin="0,1,0,0"/>
+        <TextBlock x:Name="HkdText" Text="" Foreground="{DynamicResource TextFaint}" FontSize="9" TextWrapping="Wrap" Margin="0,1,0,0" Visibility="Collapsed"/>
+        <Border Height="1" Background="{DynamicResource DividerBrush}" Margin="0,8,0,0"/>
+        <StackPanel Margin="0,6,0,0">
+          <TextBlock x:Name="NotePeak1" Text="高峰＝週一至五（非假日）09:00–12:00、14:00–18:00" Foreground="{DynamicResource TextBody}" FontSize="10" TextWrapping="Wrap" Margin="0,0,0,1"/>
+          <TextBlock x:Name="NotePeak2" Text="（北京時間）" Foreground="{DynamicResource TextBody}" FontSize="10" Margin="0,0,0,1"/>
+          <TextBlock x:Name="HolidayNoteText" Text="" Foreground="{DynamicResource TextFaint}" FontSize="9" TextWrapping="Wrap" Margin="0,1,0,0"/>
+        </StackPanel>
+        <TextBlock x:Name="PinHint" Text="已釘住" Foreground="{DynamicResource TextMuted}" FontSize="9" HorizontalAlignment="Right" Margin="0,3,0,0" Visibility="Collapsed"/>
+      </StackPanel>
+    </StackPanel>
+  </Border>
+</Window>

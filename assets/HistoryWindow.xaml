@@ -1,0 +1,21 @@
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="價格歷史"
+        Width="360" SizeToContent="Height"
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent"
+        Topmost="True" ShowInTaskbar="False" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        UseLayoutRounding="True"
+        TextOptions.TextFormattingMode="Display"
+        AutomationProperties.Name="價格歷史"
+        FontFamily="Microsoft JhengHei UI, Segoe UI">
+  <Border CornerRadius="14" Background="{DynamicResource BgBrush}" BorderBrush="{DynamicResource BorderBrushCard}" BorderThickness="1" Padding="14">
+    <StackPanel>
+      <TextBlock x:Name="LblHistHeading" Text="價格變動歷史" Foreground="{DynamicResource TextPrimary}" FontSize="14" FontWeight="Bold"/>
+      <ScrollViewer MaxHeight="320" VerticalScrollBarVisibility="Auto" Margin="0,10,0,0">
+        <TextBlock x:Name="HistText" Text="" Foreground="{DynamicResource TextBody}" FontSize="11" TextWrapping="Wrap" LineHeight="18"/>
+      </ScrollViewer>
+      <Button x:Name="HistClose" Content="關閉" Height="26" Margin="0,12,0,0" HorizontalAlignment="Right" Width="72" AutomationProperties.Name="關閉價格歷史" Background="{DynamicResource ButtonBg}" Foreground="{DynamicResource TextPrimary}" BorderBrush="{DynamicResource BorderBrushCard}"/>
+    </StackPanel>
+  </Border>
+</Window>

@@ -1,0 +1,8 @@
+*.exe
+*.ico
+*.log
+*.tmp
+logs/
+legacy/
+data/widget-config.json
+data/price-history.json
