@@ -1,5 +1,7 @@
 # DeepSeek 價格小工具
 
+**繁體中文** · [English](README.en.md) · [简体中文](README.zh-CN.md) · [日本語](README.ja.md) · [Русский](README.ru.md)
+
 Windows 桌面懸浮小工具，顯示 DeepSeek API 的高峰／空閒時段與即時價格，支援多貨幣與多語言。
 
 > 非官方工具；價格一律以 DeepSeek 官方定價頁為準。
