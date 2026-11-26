@@ -2463,6 +2463,7 @@ static class Program
         {
             string label = (next.Value.Hour == 9 || next.Value.Hour == 14) ? S("countdown.toPeak", "距高峰開始") : S("countdown.toOffpeak", "距高峰結束");
             string dur = FormatCountdown(next.Value - now);
+            Brush countdownBrush = GetPeriod(now) == "peak" ? badgePeak : badgeOff;
             cd = label + " " + dur;
             string key = label + "|" + dur;
             if (lastCountdownKey != key)
@@ -2470,7 +2471,7 @@ static class Program
                 lastCountdownKey = key;
                 countdownText.Inlines.Clear();
                 countdownText.Inlines.Add(new Run(label + " "));
-                countdownText.Inlines.Add(new Run(dur) { Foreground = badgeOff });
+                countdownText.Inlines.Add(new Run(dur) { Foreground = countdownBrush });
             }
         }
         else
