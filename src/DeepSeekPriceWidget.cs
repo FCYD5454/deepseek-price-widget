@@ -1165,6 +1165,8 @@ static class Program
         if (lblProOut != null) { lblProOut.Text = S("row.out", "輸出"); }
         if (lblFees != null) { lblFees.Text = S("section.fees", "其他費用"); }
         if (lblStatus != null) { lblStatus.Text = S("section.status", "資料狀態"); }
+        if (headOff != null) { headOff.Text = S("period.offpeak", "空閒"); }
+        if (headPeak != null) { headPeak.Text = S("period.peak", "高峰"); }
         if (notePeak1 != null) { notePeak1.Text = S("note.peak1", "高峰＝週一至五（非假日）09:00–12:00、14:00–18:00"); }
         if (notePeak2 != null) { notePeak2.Text = S("note.peak2", "（北京時間）"); }
         if (pinHint != null) { pinHint.Text = S("pin.hint", "已釘住"); }
@@ -2482,6 +2484,10 @@ static class Program
                 countdownText.Inlines.Clear();
             }
         }
+        if (headOff != null) { headOff.Text = S("period.offpeak", "空閒"); }
+        if (headPeak != null) { headPeak.Text = S("period.peak", "高峰"); }
+        if (lblFees != null) { lblFees.Text = S("section.fees", "其他費用"); }
+        if (lblStatus != null) { lblStatus.Text = S("section.status", "資料狀態"); }
         string pn = S("pricenote.default", "價格資料：內建預設（尚未更新）");
         if (!string.IsNullOrEmpty(priceUpdateDate)) { pn = SF("pricenote.updated", "價格資料：{0} 自官網更新", priceUpdateDate); }
         if (priceFetching)
